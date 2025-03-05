@@ -1,6 +1,3 @@
-# SQL-Project
-Complete SQL Topics for Data Analysts 😄👇
-
 --1) Retrieve all books in the "Fiction" genre
 Select * from Books where Genre = 'fiction'
 
@@ -11,13 +8,13 @@ Select * from Books  where Published_Year > 1950
 Select * from Customers where Country = 'Canada'
 
 --4) Show orders placed in November 2023
-
+Select * from Orders where Year(Order_Date) = 2023 order by Order_Date
 
 --5) Retrieve the total stock of books available
 Select sum(quantity) total_stocks from orders
 
 --6) Find the details of the most expensive book
-
+Select top 1 * from Books order by Price desc
 
 --7) Show all customers who ordered more than 1 quantity of a book
 Select * from Orders where Quantity > 1
@@ -32,8 +29,7 @@ Select distinct Genre from Books
 Select top 1 * from Orders order by Quantity asc
 
 --11) Calculate the total revenue generated from all orders
-Select SUM(total_amount) Revenue
-	from orders
+Select SUM(total_amount) Revenue from orders
 
 --12) Retrieve the total number of books sold for each genre
 Select b.genre, sum(Quantity) book_sold 
