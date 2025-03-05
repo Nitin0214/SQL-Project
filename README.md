@@ -12,14 +12,12 @@ Select * from Customers where Country = 'Canada'
 
 --4) Show orders placed in November 2023
 
-Select * from Orders where Year(Order_Date) = 2023 order by Order_Date
 
 --5) Retrieve the total stock of books available
 Select sum(quantity) total_stocks from orders
 
 --6) Find the details of the most expensive book
 
-Select top 1 * from Books order by Price desc
 
 --7) Show all customers who ordered more than 1 quantity of a book
 Select * from Orders where Quantity > 1
